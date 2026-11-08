@@ -9,85 +9,54 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Patient Dashboard"),
-          backgroundColor: Colors.blue,
         ),
 
-        body: Padding(
-          padding: EdgeInsets.all(16),
+        body: Column(
+          children: [
 
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            Text("Patient Information"),
 
-              Text(
-                "Patient Information",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              Text("Welcome to the Hospital Dashboard"),
-
-              SizedBox(height: 20),
-
-              Container(
-                padding: EdgeInsets.all(15),
-                margin: EdgeInsets.all(5),
-
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Patient Name: Arun"),
-                    Text("Patient ID: P101"),
-                    Text("Age: 35"),
-                  ],
-                ),
-              ),
-
-              SizedBox(height: 15),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Container(
+              padding: EdgeInsets.all(10),
+              color: Colors.blue.shade100,
+              child: Column(
                 children: [
-                  Icon(Icons.person, size: 35),
-                  Icon(Icons.medical_services, size: 35),
-                  Icon(Icons.local_hospital, size: 35),
+                  Text("Name: Arun"),
+                  Text("ID: P101"),
+                  Text("Age: 35"),
                 ],
               ),
+            ),
 
-              SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.person),
+                Icon(Icons.local_hospital),
+                Icon(Icons.medical_services),
+              ],
+            ),
 
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.person),
-                  title: Text("Assigned Doctor"),
-                  subtitle: Text("Dr. Kumar"),
-                ),
+            Card(
+              child: ListTile(
+                title: Text("Assigned Doctor"),
+                subtitle: Text("Dr. Kumar"),
               ),
+            ),
 
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.room),
-                  title: Text("Room Number"),
-                  subtitle: Text("205"),
-                ),
+            Card(
+              child: ListTile(
+                title: Text("Room Number"),
+                subtitle: Text("205"),
               ),
+            ),
 
-            ],
-          ),
+          ],
         ),
       ),
     );
   }
 }
-
